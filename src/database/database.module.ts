@@ -8,7 +8,7 @@ import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
     TypeOrmModule.forRootAsync({
       useFactory: (): TypeOrmModuleOptions => {
         return {
-          type: 'better-sqlite3',
+          type: 'sqlite',
           database: process.env.DB_FILE ?? './test.db',
         };
       }

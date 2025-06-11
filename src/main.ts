@@ -1,13 +1,15 @@
-import dotenv from 'dotenv';
-import { ExpressAdapter, NestExpressApplication } from '@nestjs/platform-express';
+import 'reflect-metadata';
+
 import { ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
-import { AppModule } from 'app.module';
+import { ExpressAdapter, NestExpressApplication } from '@nestjs/platform-express';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
+import dotenv from 'dotenv';
+import { AppModule } from './app.module';
 
 dotenv.config();
 
-async function bootstrap() {
+async function bootstrap(): Promise<void> {
   const adapter = new ExpressAdapter();
 
   const app = await NestFactory.create<NestExpressApplication>(AppModule, adapter, {
