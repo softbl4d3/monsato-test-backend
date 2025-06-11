@@ -1,0 +1,40 @@
+{
+    "$schema": "https://json.schemastore.org/tsconfig",
+    "compilerOptions": {
+        "allowSyntheticDefaultImports": true,
+        "baseUrl": "./src",
+        "declaration": true,
+        "emitDecoratorMetadata": true,
+        "esModuleInterop": true,
+        "experimentalDecorators": true,
+        "forceConsistentCasingInFileNames": true,
+        "importHelpers": true,
+        "incremental": true,
+        "module": "NodeNext",
+        "moduleResolution": "NodeNext",
+        "noFallthroughCasesInSwitch": true,
+        "outDir": "./dist",
+        "removeComments": true,
+        "resolveJsonModule": true,
+        "sourceMap": true,
+        "skipLibCheck": true,
+        "strict": true,
+        "target": "esnext"
+    },
+    "paths": {
+        "#/*": ["./src/*"],
+        "*": ["./src/*", "./node_modules/*"]
+    },
+    "exclude": [
+        "test",
+        "dist",
+        "**/*spec.ts",
+        "src/metadata.ts"
+    ],
+    "ts-node": {
+        "files": true
+    },
+    "watchOptions": {
+        "excludeDirectories": ["node_modules", "dist", "db", "docs", "deploy", ".pnpm-store", ".tmp", ".docker"]
+    }
+}
