@@ -19,6 +19,7 @@
         "sourceMap": true,
         "skipLibCheck": true,
         "strict": true,
+        "strictPropertyInitialization": false, // for entity
         "target": "esnext"
     },
     "paths": {
